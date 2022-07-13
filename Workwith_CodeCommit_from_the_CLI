@@ -1,0 +1,27 @@
+##Configure the AWS CLI credentials:
+AWS account > IAM > USERs > select ur user > security credientials > download csv file 
+launch ec2 instance with public ip and run follwing command 
+sudo yum update -y
+sudo yum install git -y
+aws configure : (AWS secret key and AWS access key )   note : if u using local git in accenture laptop then got following error 
+(((((SSL validation failed for https://codecommit.us-east-1.amazonaws.com/ [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: 
+self signed certificate in certificate chain (_ssl.c:1129)   )))))))))
+###  Run the following command to create a CodeCommit repository from the AWS CLI:
+aws codecommit create-repository --repository-name RepoFromCLI --repository-description "My demonstration repository"
+
+now go to the code commit console and look for the repo creted copu git clone url and type command 
+
+git clone <git clone url >
+user name and pass word : here we use username and password for git connection which we obtained from IAM section 
+
+after cloning 
+ ls 
+ cd <filename>
+ vim <file name> 
+ changes done 
+ git add <file name>   ## staging arae
+ git commit -m "added file name"   ### commit changes 
+ git log ### for see thee changes 
+ git push -u origin main
+
+ 
